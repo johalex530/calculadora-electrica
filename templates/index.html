@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Calculadora Electrica">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1006/1006555.png">
+    <title>Calculadora Eléctrica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #00c3ff;
+            border: none;
+            border-radius: 8px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #00ff88;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>⚡ Calculadora Eléctrica</h2>
+
+<form method="POST">
+    <input type="number" step="any" name="voltaje" placeholder="Voltaje (V)" required><br>
+    <input type="number" step="any" name="potencia" placeholder="Potencia (W)" required><br>
+    <input type="number" step="any" name="fp" placeholder="Factor de Potencia" required><br>
+
+    <button type="submit">Calcular</button>
+</form>
+
+{% if resultado %}
+<div class="resultado">
+    Corriente: {{ resultado }} A
+</div>
+{% endif %}
+
+</body>
+</html>
